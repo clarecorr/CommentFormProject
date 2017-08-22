@@ -9,20 +9,9 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Priority)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Details)
-        </th>
-        <th></th>
-    </tr>
 
+            @Html.DisplayNameFor(model => model.Priority)
+  
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -42,4 +31,4 @@
     </tr>
 }
 
-</table>
+

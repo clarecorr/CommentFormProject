@@ -9,43 +9,36 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Procedure.Details)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Priority)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Procedure.Details)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Priority)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CommentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CommentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CommentID })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </h3>
+                    <h4>
+                        @Html.DisplayFor(modelItem => item.Procedure.Details)
+                    </h4>
+
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </p>
+                    <p>
+                        <span class="label label-default">@Html.DisplayNameFor(model => model.Priority)</span> @Html.DisplayFor(modelItem => item.Priority)
+                    </p>
+                    <p>
+                        @Html.ActionLink("Details", "Details", new { id = item.CommentID }, new { @class = "btn btn-primary", role = "button" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

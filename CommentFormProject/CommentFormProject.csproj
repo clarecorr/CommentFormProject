@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Models\CommentForm.cs" />
     <Compile Include="Models\CommentFormProjectContext.cs" />
+    <Compile Include="Models\CommentFormViewModel.cs" />
     <Compile Include="Models\Procedure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
